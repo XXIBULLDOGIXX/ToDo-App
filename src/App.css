@@ -9,6 +9,8 @@
 #titleToDoApp {
     text-decoration: underline;
     margin-bottom: 10px;
+    color: white;
+    text-shadow: 3px 3px black;
 }
 
 #addToDoForm {
@@ -25,11 +27,12 @@
 }
 
 .todoBtn {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
+    font-weight: bold;
     margin: 10px;
     padding: 5px 4vw;
-    border: none;
+    border: 3px solid black;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -42,7 +45,7 @@
 /* toDoListField */
 
 #ToDoListContainer {
-    margin: 50px 0;
+    margin: 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +66,10 @@
 .toDoMsg {
     margin: 20px;
     cursor: pointer;
+}
+
+.toDoMsg.checked {
+    text-decoration: line-through 4px;
 }
 
 #toDoCheckboxAndDeleteToDoBtnContainer {

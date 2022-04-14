@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ToDoListHeader from "./components/toDoListHeader"
 import ToDoListField from "./components/toDoListField"
 import './App.css';
@@ -11,10 +11,10 @@ function App() {
     <>
       <ToDoListHeader/>
       <form onSubmit={handleSubmitToDo} id="addToDoForm" action="/submit">
-        <input onChange={handleInputTodo} id="inputToDo" type="text" />
+        <input value={toDo} onChange={handleInputTodo} id="inputToDo" type="text" />
         <div id="btnsContainerToDoApp">
             <button onClick={handleAddToDo} className="todoBtn" id="addToDoBtn" type="submit">Add ToDo</button>
-            <button onClick={handleDeleteAllToDo} className="todoBtn" id="DeleteAllToDoesBtn" type="reset">Delete all</button>
+            <button onClick={handleDeleteAllToDo} className="todoBtn" id="DeleteAllToDoesBtn">Delete all</button>
         </div>
       </form>
       <ToDoListField toDoList={toDoList} onDeleteToDo={handleDeleteToDo} />
@@ -31,10 +31,14 @@ function App() {
   }
 
   function handleAddToDo() {
+    if (!toDo) {
+      return alert("You have to fill in a ToDo.")
+    }
     if (toDoList.filter(toDoFromFilter => toDoFromFilter !== toDo).length === toDoList.length) {
       setToDoList([...toDoList, toDo])
     }
     else alert("You can't have multiple times the same ToDo.")
+    setToDo("");
   }
 
   function handleDeleteAllToDo() {
