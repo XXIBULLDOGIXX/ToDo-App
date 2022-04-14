@@ -1,3 +1,5 @@
+/* toDoListHeader */
+
 #toDoListHeaderContainer {
     display: flex;
     flex-direction: column;
@@ -27,6 +29,9 @@
     color: white;
     margin: 10px;
     padding: 5px 4vw;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .todoBtn:hover {
@@ -34,8 +39,60 @@
     transition: transform 0.5s;
 }
 
-#addToDoBtn {
+/* toDoListField */
+
+#ToDoListContainer {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#DeleteAllToDoesBtn {
+.toDoArticle {
+    margin: 6px;
+    background-color: white;
+    border: black 6px solid;
+    border-radius: 20px;
+    width: 90vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toDoMsg {
+    margin: 20px;
+    cursor: pointer;
+}
+
+#toDoCheckboxAndDeleteToDoBtnContainer {
+    margin: 20px;
+}
+
+.toDoCheckBox {
+    cursor: pointer;
+    margin: 15px;
+    transform: scale(2);
+}
+
+.toDoCheckBox:hover {
+    transform: scale(2.2);
+    transition: transform 0.5s;
+}
+
+.toDoDeleteBtn {
+    cursor: pointer;
+    margin: 15px;
+    width: 10vw;
+    max-width: 150px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.toDoDeleteBtn:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s;
 }
